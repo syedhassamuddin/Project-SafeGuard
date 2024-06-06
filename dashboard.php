@@ -450,6 +450,7 @@
               <span class="badge filter badge-primary active" data-color="primary"></span>
               <span class="badge filter badge-info" data-color="blue"></span>
               <span class="badge filter badge-success" data-color="green"></span>
+              <span class="badge filter badge-light" data-color="danger"></span>
             </div>
             <div class="clearfix"></div>
           </a>
