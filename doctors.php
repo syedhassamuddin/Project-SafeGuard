@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Protect</title>
+      <title>Doctors</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,45 +32,26 @@
    </head>
    <body>
       <!--header section start -->
-      <div class="header_section header_bg">
-         <div class="container-fluid">
-               <div class="main">
-                  <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-                  <div class="menu_text">
-                     <ul>
-                        <div class="togle_">
-                           <div class="menu_main">
-                              <ul>
-                                 <li><a href="#">Login</a></li>
-                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div id="myNav" class="overlay">
-                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                           <div class="overlay-content">
-                              <a href="index.html">Home</a>
-                              <a href="protect.html">Protect</a>
-                              <a href="about.html">About</a>
-                              <a href="doctors.html">Doctors</a>
-                              <a href="news.html">News</a>
-                           </div>
-                        </div>
-                        <span class="navbar-toggler-icon"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon.png" class="toggle_menu"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu_1"></span>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <!-- banner section start -->
+      <?php
+      /**========================================================================
+       *  ?                          HEADER START
+       *========================================================================**/
+      
+      include("assets/partials/otherpagessidebar.php");
+      
+      /**========================================================================
+       *  ?                           HEADER END
+       *========================================================================**/
+      ?>
+      
+      <!-- banner section start -->
             <div class="container">
                <div class="about_taital_main">
-                  <h2 class="about_tag">Protect Corona Virus</h2>
+                  <h2 class="about_tag">Doctors Corona Virus</h2>
                   <div class="about_menu">
                      <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li>Protect</li>
+                        <li>Doctors</li>
                      </ul>
                   </div>
                </div>
@@ -78,32 +59,28 @@
          <!-- banner section end -->
       </div>
       <!-- header section end -->
-      <!-- protect section start -->
-      <div class="protect_section layout_padding">
-         <div class="container">
+      <!-- doctor section start -->
+      <div class="doctors_section layout_padding">
+         <div class="container-fluid">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="protect_taital">How to Protect Yourself</h1>
-                  <p class="protect_text">English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
-               </div>
-            </div>
-            <div class="protect_section_2 layout_padding">
-               <div class="row">
-                  <div class="col-md-6">
-                     <h1 class="hands_text"><a href="#">Wash your <br>hands frequently</a></h1>
-                     <h1 class="hands_text_2"><a href="#">Maintain social <br>distancing</a></h1>
-                     <h1 class="hands_text"><a href="#">Avoid touching eyes,<br>nose and mouth</a></h1>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="image_2"><img src="images/img-2.png"></div>
+                  <div class="taital_main">
+                     <div class="taital_left">
+                        <div class="play_icon"><img src="images/play-icon.png"></div>
+                     </div>
+                     <div class="taital_right">
+                        <h1 class="doctor_taital">What doctors say..</h1>
+                        <p class="doctor_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
+                        <div class="readmore_bt"><a href="#">Read More</a></div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- protect section end -->
+      <!-- doctor section end -->
       <!-- footer section start -->
-      <div class="footer_section layout_padding margin_top90">
+      <div class="footer_section layout_padding">
          <div class="container">
             <div class="footer_section_2">
                <div class="row">

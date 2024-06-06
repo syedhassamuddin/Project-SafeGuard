@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Doctors</title>
+      <title>About</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,72 +32,35 @@
    </head>
    <body>
       <!--header section start -->
-      <div class="header_section header_bg">
-         <div class="container-fluid">
-               <div class="main">
-                  <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-                  <div class="menu_text">
-                     <ul>
-                        <div class="togle_">
-                           <div class="menu_main">
-                              <ul>
-                                 <li><a href="#">Login</a></li>
-                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div id="myNav" class="overlay">
-                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                           <div class="overlay-content">
-                              <a href="index.html">Home</a>
-                              <a href="protect.html">Protect</a>
-                              <a href="about.html">About</a>
-                              <a href="doctors.html">Doctors</a>
-                              <a href="news.html">News</a>
-                           </div>
-                        </div>
-                        <span class="navbar-toggler-icon"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon.png" class="toggle_menu"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu_1"></span>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <!-- banner section start -->
-            <div class="container">
-               <div class="about_taital_main">
-                  <h2 class="about_tag">Doctors Corona Virus</h2>
-                  <div class="about_menu">
-                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Doctors</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         <!-- banner section end -->
-      </div>
+
+      <?php
+      /**========================================================================
+       *  ?                          HEADER START
+       *========================================================================**/
+      
+      include("assets/partials/otherpagessidebar.php");
+      
+      /**========================================================================
+       *  ?                           HEADER END
+       *========================================================================**/
+      ?>
       <!-- header section end -->
-      <!-- doctor section start -->
-      <div class="doctors_section layout_padding">
-         <div class="container-fluid">
+      <!-- about section start -->
+      <div class="about_section layout_padding">
+         <div class="container">
             <div class="row">
-               <div class="col-sm-12">
-                  <div class="taital_main">
-                     <div class="taital_left">
-                        <div class="play_icon"><img src="images/play-icon.png"></div>
-                     </div>
-                     <div class="taital_right">
-                        <h1 class="doctor_taital">What doctors say..</h1>
-                        <p class="doctor_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
-                        <div class="readmore_bt"><a href="#">Read More</a></div>
-                     </div>
-                  </div>
+               <div class="col-md-6">
+                  <div class="about_img"><img src="images/img-1.png"></div>
+               </div>
+               <div class="col-md-6">
+                  <h1 class="about_taital">Coronavirus what it is?</span></h1>
+                  <p class="about_text">when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                  <div class="read_bt"><a href="#">Read More</a></div>
                </div>
             </div>
          </div>
       </div>
-      <!-- doctor section end -->
+      <!-- about section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
