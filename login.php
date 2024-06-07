@@ -13,6 +13,24 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
+<?php
+session_start();
+include("conn.php");
+
+if(isset($_POST['submit'])){
+  $firstname = $_POST['first_name'];
+  $lastname = $_POST['last_name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $account_type = $_POST['account_type'];
+  mysqli_query($conn,"SELECT * FROM `patients` WHERE account_type = $account_type ");
+  mysqli_query($conn,"INSERT INTO `users`(` $firstname`, ` $lastname`, `$email`, `$password`, ` $account_type`) 
+  VALUES (null,'first_name','last_name','email','password','account_type')");
+
+}
+echo "done";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,17 +61,39 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Sign In</h5>
+                <h5 class="title">login</h5>
               </div>
               <div class="card-body">
-                <form>
-                  <div class="row">
+
+                <form action="dashboard.php" method="post">
+
+                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">
-                        <label>Email Address</label>
+                        <label>FirstName</label>
+                        <input type="text" class="form-control" placeholder="FirstName" value="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label>LastName</label>
+                        <input type="text" class="form-control" placeholder="LastName" value="">
+                      </div>
+                    </div>
+                  </div>
+                
+
+                <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label>Email</label>
                         <input type="text" class="form-control" placeholder="Email" value="">
                       </div>
                     </div>
+
+
+
                     <div class="col-12">
                       <div class="form-group">
                         <label>Password</label>
@@ -62,8 +102,25 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="col-12 col-md-6">
+								<div class="card">
+									<div class="card-header">
+										<h5 class="card-title mb-0">Account Type</h5>
+									</div>
+									<div class="card-body">
+										<select name="account_type" class="form-select mb-3">
+											<option selected disabled>Select Account Type</option>
+											<option value="admin">Patient</option>
+											<option value="agent">Hospital</option>
+											<option value="customer">Admin</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                  <button type="submit" class="btn btn-fill btn-primary">Register</button>
                 </div>
               </form>
             </div>
