@@ -1,3 +1,52 @@
+<?php
+
+         if ($_SERVER['REQUEST_METHOD']== 'POST'){
+          $age = $_POST['PAge'];
+          $Uname = $_POST['PUname'];
+          $email = $_POST['Pemail'];
+          $first_name = $_POST['PFname'];
+          $lastname = $_POST['PLname'];
+          $address = $_POST['Paddress'];
+          $city = $_POST['Pcity'];
+          $country = $_POST['Pcountry'];
+          $pass = $_POST['password'];
+         
+         $servename = "localhost";
+          $username = "root";
+          $password = "";
+          $database = "safeguarddb";
+
+
+          $conn = mysqli_connect($servename,$username,$password,$database);
+
+          if(!$conn)
+          {
+            die("sorry we failed to cnnect:".mysqli_connect_error());
+          }
+          
+          $sql = "INSERT INTO `patients` (`patient_age`, `patient_username`, `patient_email`, `patient_first_name`, `patient_last_name`, `patient_address`, `patient_city`, `patient_country`, `patient_password`) VALUES ('$age','$Uname','$email','$first_name','$lastname','$address','$city','$country','$pass')";
+          $result = mysqli_query($conn,$sql);
+
+
+          if($result){
+            echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Your entry has been inserted successfully!.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+          }
+          else{
+            echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> we are facing some technical issues.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+          }
+        }
+
+
+
+          ?>
+
+
 <!--
 =========================================================
 * * Black Dashboard - v1.0.1
@@ -22,7 +71,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
-    Black Dashboard by Creative Tim
+  
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -35,7 +84,11 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
+
+
+
 <body class="">
+<form action="farhan.php" method="post">
   <div class="wrapper">
     <div class="sidebar">
       <!--
@@ -44,10 +97,10 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-mini">
-            CT
+            
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            Creative Tim
+          
           </a>
         </div>
         <ul class="nav">
@@ -185,92 +238,93 @@
         </div>
       </div>
       <!-- End Navbar -->
+      
       <div class="content">
         <div class="row">
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Edit Profile</h5>
+                <h5 class="title">Patient details</h5>
               </div>
               <div class="card-body">
                 <form>
                   <div class="row">
                     <div class="col-md-5 pr-md-1">
                       <div class="form-group">
-                        <label>Company (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                        <label>Patient Age</label>
+                        <input type="number" name="PAge" class="form-control"  placeholder="Patient Age">
                       </div>
                     </div>
                     <div class="col-md-3 px-md-1">
                       <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                        <label>Patient Username</label>
+                        <input type="text" name="PUname"class="form-control" placeholder="Username" >
                       </div>
                     </div>
                     <div class="col-md-4 pl-md-1">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
+                        <label for="exampleInputEmail1">Patient Email</label>
+                        <input type="email" name="Pemail" class="form-control" placeholder="Email">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Mike">
+                        <label>Patient First Name</label>
+                        <input type="text" name="PFname" class="form-control" placeholder="First name">
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                        <label>Patient Last Name</label>
+                        <input type="text" name="PLname" class="form-control" placeholder="Last Name">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                        <label>Patient Address</label>
+                        <input type="text" name="Paddress" class="form-control" placeholder="Home Address">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-4 pr-md-1">
                       <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Mike">
+                        <label>Patient City</label>
+                        <input type="text" name="Pcity"class="form-control" placeholder="City" >
                       </div>
                     </div>
                     <div class="col-md-4 px-md-1">
                       <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                        <label>Patient Country</label>
+                        <input type="text" name="Pcountry" class="form-control" placeholder="Country">
                       </div>
                     </div>
                     <div class="col-md-4 pl-md-1">
                       <div class="form-group">
-                        <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
+                        <label>Password</label>
+                        <input type="password" name ="password" class="form-control" placeholder="Email Password">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-8">
                       <div class="form-group">
-                        <label>About Me</label>
-                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                        <label>About US</label>
+                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description about your condition about your health"></textarea>
                       </div>
                     </div>
                   </div>
-                </form>
               </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                <button type="submit" class="btn btn-fill btn-primary">Submit</button>
               </div>
             </div>
           </div>
+          
           <div class="col-md-4">
             <div class="card card-user">
               <div class="card-body">
@@ -380,6 +434,7 @@
       </ul>
     </div>
   </div>
+      </form>
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
