@@ -19,6 +19,13 @@
             </a>
           </li>
           <li>
+          <li class="">
+            <a href="./createaccount.php">
+              <i class="tim-icons icon-badge"></i>
+              <p>Create Account</p>
+            </a>
+          </li>
+          <li>
             <a href="./icons.php">
               <i class="tim-icons icon-atom"></i>
               <p>Icons</p>
