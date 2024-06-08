@@ -25,6 +25,12 @@
               <p>Create Account</p>
             </a>
           </li>
+          <li class="">
+            <a href="./viewresults.php">
+              <i class="tim-icons icon-badge"></i>
+              <p>View Results</p>
+            </a>
+          </li>
           <li>
             <a href="./icons.php">
               <i class="tim-icons icon-atom"></i>
