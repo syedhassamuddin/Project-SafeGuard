@@ -24,18 +24,11 @@
 <body class="">
   <div class="wrapper">
    
+  <?php require "assets/partials/adminsidebar.php"; ?>
 
+  <div class="main-panel">
 
- 
-<?php
-  include("assets/partials/adminsidebar.php");
-?>
-
-
-<?php
-  include("assets/partials/adminnavbar.php");
-?>
-
+  <?php include("assets/partials/adminnavbar.php"); ?>
 
       <div class="content">
         <div class="row">
