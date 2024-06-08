@@ -1,67 +1,41 @@
 <?php
+  require "conn.php";
+  
+  if(!$conn)
+  {
+    die("sorry we failed to connect to the database:".mysqli_connect_error());
+  }
+  else{
+    if($_SERVER['REQUEST_METHOD']== 'POST'){
+      $age = $_POST['PAge'];
+      $Uname = $_POST['PUname'];
+      $email = $_POST['Pemail'];
+      $first_name = $_POST['PFname'];
+      $lastname = $_POST['PLname'];
+      $address = $_POST['Paddress'];
+      $city = $_POST['Pcity'];
+      $country = $_POST['Pcountry'];
+      $pass = $_POST['password'];
+      
+      $sql = "INSERT INTO `patients` (`patient_age`, `patient_username`, `patient_email`, `patient_first_name`, `patient_last_name`, `patient_address`, `patient_city`, `patient_country`, `patient_password`) VALUES ('$age','$Uname','$email','$first_name','$lastname','$address','$city','$country','$pass')";
+      $result = mysqli_query($conn,$sql);
+    
+      if($result){
+        echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Your entry has been inserted successfully!.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+      }
+      else{
+        echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> we are facing some technical issues.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+      }
+    }
+  }
+?>
 
-         if ($_SERVER['REQUEST_METHOD']== 'POST'){
-          $age = $_POST['PAge'];
-          $Uname = $_POST['PUname'];
-          $email = $_POST['Pemail'];
-          $first_name = $_POST['PFname'];
-          $lastname = $_POST['PLname'];
-          $address = $_POST['Paddress'];
-          $city = $_POST['Pcity'];
-          $country = $_POST['Pcountry'];
-          $pass = $_POST['password'];
-         
-         $servename = "localhost";
-          $username = "root";
-          $password = "";
-          $database = "safeguarddb";
-
-
-          $conn = mysqli_connect($servename,$username,$password,$database);
-
-          if(!$conn)
-          {
-            die("sorry we failed to cnnect:".mysqli_connect_error());
-          }
-          
-          $sql = "INSERT INTO `patients` (`patient_age`, `patient_username`, `patient_email`, `patient_first_name`, `patient_last_name`, `patient_address`, `patient_city`, `patient_country`, `patient_password`) VALUES ('$age','$Uname','$email','$first_name','$lastname','$address','$city','$country','$pass')";
-          $result = mysqli_query($conn,$sql);
-
-
-          if($result){
-            echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success!</strong> Your entry has been inserted successfully!.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
-          }
-          else{
-            echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error!</strong> we are facing some technical issues.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
-          }
-        }
-
-
-
-          ?>
-
-
-<!--
-=========================================================
-* * Black Dashboard - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/black-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,190 +58,26 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-
-
-
-<body class="">
-<form action="farhan.php" method="post">
+<body>
   <div class="wrapper">
-    <div class="sidebar">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
-      <div class="sidebar-wrapper">
-        <div class="logo">
-          <a href="javascript:void(0)" class="simple-text logo-mini">
-            
-          </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
-          
-          </a>
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="./dashboard.html">
-              <i class="tim-icons icon-chart-pie-36"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
-              <i class="tim-icons icon-atom"></i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="tim-icons icon-pin"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="active ">
-            <a href="./user.html">
-              <i class="tim-icons icon-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="tim-icons icon-align-center"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li>
-            <a href="./rtl.html">
-              <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="tim-icons icon-spaceship"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <?php require "assets/partials/admin-sidebar.php";?>
+
     <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle d-inline">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="javascript:void(0)">User Profile</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
-                  <span class="d-lg-none d-md-block">Search</span>
-                </button>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="notification d-none d-lg-block d-xl-block"></div>
-                  <i class="tim-icons icon-sound-wave"></i>
-                  <p class="d-lg-none">
-                    Notifications
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Mike John responded to your email</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another notification</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a></li>
-                </ul>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="assets/img/anime3.png" alt="Profile Photo">
-                  </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <p class="d-lg-none">
-                    Log out
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
-                  <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
-                </ul>
-              </li>
-              <li class="separator d-lg-none"></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Navbar -->
+
+      <?php require "assets/partials/adminnavbar.php";?>
       
       <div class="content">
         <div class="row">
           <div class="col-md-8">
             <div class="card">
+
               <div class="card-header">
                 <h5 class="title">Patient details</h5>
               </div>
+
               <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-5 pr-md-1">
-                      <div class="form-group">
-                        <label>Patient Age</label>
-                        <input type="number" name="PAge" class="form-control"  placeholder="Patient Age">
-                      </div>
-                    </div>
-                    <div class="col-md-3 px-md-1">
-                      <div class="form-group">
-                        <label>Patient Username</label>
-                        <input type="text" name="PUname"class="form-control" placeholder="Username" >
-                      </div>
-                    </div>
-                    <div class="col-md-4 pl-md-1">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Patient Email</label>
-                        <input type="email" name="Pemail" class="form-control" placeholder="Email">
-                      </div>
-                    </div>
-                  </div>
+                <form action="vaccine-appointment.php" method="post">
+                  
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
@@ -279,6 +89,21 @@
                       <div class="form-group">
                         <label>Patient Last Name</label>
                         <input type="text" name="PLname" class="form-control" placeholder="Last Name">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                      <div class="form-group">
+                        <label>Patient Age</label>
+                        <input type="number" name="PAge" class="form-control"  placeholder="Patient Age">
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-md-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Patient Gender</label>
+                        <input type="email" name="Pgender" class="form-control" placeholder="Gender">
                       </div>
                     </div>
                   </div>
@@ -434,7 +259,7 @@
       </ul>
     </div>
   </div>
-      </form>
+  </form>
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>

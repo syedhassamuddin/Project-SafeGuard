@@ -13,11 +13,16 @@
 
 CREATE TABLE patients(
 	patient_id INT PRIMARY KEY AUTO_INCREMENT,
-    patient_name VARCHAR(225),
+    patient_first_name VARCHAR(225),
+    patient_last_name VARCHAR(225),
     patient_age INT(3),
     patient_gender VARCHAR(1),
+    patient_email VARCHAR(225),
+    patient_password VARCHAR(225),
     patient_city VARCHAR(225),
-    vaccine_required VARCHAR(225)
+    patient_country VARCHAR(225),
+    vaccine_required VARCHAR(225),
+    vaccine_completed VARCHAR(225)
 );
 
 3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
