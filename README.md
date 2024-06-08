@@ -20,6 +20,8 @@ CREATE TABLE patients(
     vaccine_required VARCHAR(225)
 );
 
+3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
+
 ## account_type
 
 1. Patient
