@@ -1,47 +1,23 @@
-<!--
-=========================================================
-* * Black Dashboard - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/black-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <?php
-session_start();
-include "conn.php";
-if (isset ($_POST['submit'])){
-  $users = $_POST ['email'];
-  $password= $_POST['password'];
-  $account_type= $_POST ['account_type'];
-  $res = mysqli_query($conn,"select * from users where email = '$users' , password = '$password'");
-  $sql = mysqli_num_row($res);
-  if($sql!=0){
-    header("location:dashboard.php");
+  session_start();
+  require "conn.php";
+  if (isset ($_POST['login-submit'])){
+    $email = $_POST ['email'];
+    $password= $_POST['password'];
+    $account_type= $_POST ['account_type'];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+    $sql = mysqli_num_rows($result);
+    if($sql!=0){
+      header("location:dashboard.php");
+    }
+    else{
+      echo
+      "<script>
+              window.location.href = 'login.php'; 
+            alert ('Incorrect Credentials')
+            </script>";
+    }
   }
-  else{
-    echo
-    "<script>
-						window.location.href = 'login.php'; 
-          alert ('Not Successfull')
-          </script>";
-
-  }
-    
-  
-
-
-
-}
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -116,7 +92,7 @@ if (isset ($_POST['submit'])){
 							</div>
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-fill btn-primary">Login</button>
+                  <button type="submit" class="btn btn-fill btn-primary" name="login-submit">Login</button>
                 </div>
               </form>
             </div>
