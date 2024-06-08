@@ -15,20 +15,33 @@
 -->
 <?php
 session_start();
-include("conn.php");
+include "conn.php";
+if (isset ($_POST['submit'])){
+  $users = $_POST ['email'];
+  $password= $_POST['password'];
+  $account_type= $_POST ['account_type'];
+  $res = mysqli_query($conn,"select * from users where email = '$users' , password = '$password'");
+  $sql = mysqli_num_row($res);
+  if($sql!=0){
+    header("location:dashboard.php");
+  }
+  else{
+    echo
+    "<script>
+						window.location.href = 'login.php'; 
+          alert ('Not Successfull')
+          </script>";
 
-if(isset($_POST['submit'])){
-  $firstname = $_POST['first_name'];
-  $lastname = $_POST['last_name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $account_type = $_POST['account_type'];
-  mysqli_query($conn,"SELECT * FROM `patients` WHERE account_type = $account_type ");
-  mysqli_query($conn,"INSERT INTO `users`(` $firstname`, ` $lastname`, `$email`, `$password`, ` $account_type`) 
-  VALUES (null,'first_name','last_name','email','password','account_type')");
+  }
+    
+  
+
+
 
 }
-echo "done";
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -65,30 +78,13 @@ echo "done";
               </div>
               <div class="card-body">
 
-                <form action="dashboard.php" method="post">
-
-                   <div class="row">
-                    <div class="col-12">
-                      <div class="form-group">
-                        <label>FirstName</label>
-                        <input type="text" class="form-control" placeholder="FirstName" value="">
-                      </div>
-                    </div>
-                    
-                    <div class="col-12">
-                      <div class="form-group">
-                        <label>LastName</label>
-                        <input type="text" class="form-control" placeholder="LastName" value="">
-                      </div>
-                    </div>
-                  </div>
-                
+                <form method="post">
 
                 <div class="row">
                     <div class="col-12">
                       <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control" placeholder="Email" value="">
+                        <label>Username</label>
+                        <input type="email" class="form-control"name="email" placeholder="Email" value="">
                       </div>
                     </div>
 
@@ -97,7 +93,7 @@ echo "done";
                     <div class="col-12">
                       <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" value="">
+                        <input type="password" class="form-control" name="password" placeholder="Password" value="">
                       </div>
                     </div>
                   </div>
@@ -120,7 +116,7 @@ echo "done";
 							</div>
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-fill btn-primary">Register</button>
+                  <button type="submit" class="btn btn-fill btn-primary">Login</button>
                 </div>
               </form>
             </div>
