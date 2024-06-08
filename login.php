@@ -1,6 +1,7 @@
 <?php
   session_start();
-  require "conn.php";
+  require "assets/php-scripts/conn.php";
+  
   if (isset ($_POST['login-submit'])){
     $email = $_POST ['email'];
     $password= $_POST['password'];

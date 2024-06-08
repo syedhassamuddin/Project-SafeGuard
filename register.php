@@ -1,5 +1,5 @@
 <?php
-include ("conn.php");
+require "assets/php-scripts/conn.php";
 if (isset ($_POST['register']))
 {
 $first_name = $_POST['first_name'];
