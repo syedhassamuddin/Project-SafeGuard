@@ -20,7 +20,7 @@
           </li>
           <li>
           <li class="<?php if($activePage == 'create-account'){echo 'active';}?>">
-            <a href="createaccount.php">
+            <a href="create-account.php">
               <i class="tim-icons icon-badge"></i>
               <p>Create Account</p>
             </a>

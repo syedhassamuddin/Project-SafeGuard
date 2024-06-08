@@ -1,3 +1,9 @@
+<?php
+  require "assets/php-scripts/conn.php";
+
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,12 +31,12 @@
     
     <?php
       $activePage = "create-account";
-      include("assets/partials/adminsidebar.php");
+      include("assets/partials/admin-sidebar.php");
     ?>
 
     <div class="main-panel">
 
-    <?php include("assets/partials/adminnavbar.php");?>
+    <?php include("assets/partials/admin-navbar.php");?>
 
      <div class="content">
   <div class="row">
