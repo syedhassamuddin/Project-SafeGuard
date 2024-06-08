@@ -23,6 +23,7 @@
         td{
             background-color: #27293deb;
             text-shadow: 2px 2px 2px black; 
+            
         }
     </style>
 </head>
