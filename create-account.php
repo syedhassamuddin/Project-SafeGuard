@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,35 +23,15 @@
 <body class="">
   <div class="wrapper">
     
-    <?php include("assets/partials/adminsidebar.php");?>
+    <?php
+      $activePage = "create-account";
+      include("assets/partials/adminsidebar.php");
+    ?>
 
     <div class="main-panel">
 
     <?php include("assets/partials/adminnavbar.php");?>
 
- <?php
-  include "conn.php";
-
-if(isset($_POST['submit'])){
-
-$fname = $_POST['Fname'];
-$lname = $_POST['Lname'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$password = $_POST['password'];
-$role = $_POST['accounttype'];
-
-$sql ="INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`, `account_type`, `phone`) VALUES ('$fname','$lname','$email','$password','$role','$phone')";
-$result = mysqli_query($conn,$sql);
-
-if($result){
-  echo "<script>alert('Account Created Successfully')</script>";
-}
-else{
-  echo "<script>alert('Account Creation Failed')</script>";
-}
-}
-?>
      <div class="content">
   <div class="row">
     <div class="col-md-8">
@@ -62,59 +41,42 @@ else{
         </div>
         <div class="card-body">
           <form action="createaccount.php" method="post">
-            <div class="row">
-              <div class="col-md-6 pr-md-1">
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input type="text" class="form-control" name="Fname" placeholder="First Name" >
-                </div>
-              </div>
-              <div class="col-md-6 pl-md-1">
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input type="text" class="form-control" name="Lname" placeholder="Last Name" >
-                </div>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-4 pr-md-1">
-                <div class="form-group">
-                  <label>Email</label>
-                  <input type="email" class="form-control" name="email" placeholder="Enter Email" value="mike@example.com">
-                </div>
-              </div>
-              <div class="col-md-4 px-md-1">
-                <div class="form-group">
-                  <label>Contact No</label>
-                  <input type="number" class="form-control" name="phone" placeholder="Enter Contact No" value="1234567890">
-                </div>
-              </div>
-              <div class="col-md-4 pl-md-1">
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" class="form-control" name="password" placeholder="Enter Password">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-7">
-                <div class="form-group dropdown">
-                  <label>Account Type</label>
-                  <select class="form-select form-select-lg mb-3 form-group" name="accounttype" aria-label=".form-select-lg example">
-                    <option selected>Select Account Type</option>
-                    <option value="1">Hospital</option>
-                    <option value="2">Patient</option>
-                    <option value="3">Admin</option>
+          <?php
+            if(empty($_POST['account-selection'])){
+              echo "<div class='row'>
+              <div class='col-md-6'>
+                  <label>To begin, please select the 'Account Type' you'd like to create</label>
+                  <select class='form-control mb-3' name='account-type' aria-label='.form-select-lg example' style='background-color: #27293d;'>
+                    <option selected disabled>View Options</option>
+                    <option value='patient'>Patient</option>
+                    <option value='hospital'>Hospital</option>
+                    <option value='admin'>Admin</option>
                   </select>
-                </div>
               </div>
-            </div>
+              </div>
+              <div class='col-md-6'>
+                <input class='btn btn-primary' type='submit' name='account-selection' value='Begin'>
+              </div>";
+            }
+          ?>  
+          
 
-            <div class="card-footer">
-              <button type="submit" name="submit" class="btn btn-fill btn-primary">Save</button>
-            </div>
+
+            <?php
+            if(isset($_POST['account-selection'])){
+                if($_POST['account-type'] == 'patient'){
+                  include "create-patient-account.php";
+                }
+                elseif($_POST['account-type'] == 'hospital'){
+                  include "create-hospital-account.php";
+                }
+                else{
+                  include "create-admin-account.php";
+                }
+              }
+
+            ?>
           </form>
         </div>
       </div>

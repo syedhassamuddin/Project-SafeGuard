@@ -28,10 +28,15 @@
     </style>
 </head>
 
-<body class="">
+<body>
     <div class="wrapper">
-        <?php include("assets/partials/adminsidebar.php"); ?>
-        <?php include("assets/partials/adminnavbar.php"); ?>
+        <?php
+            $activePage = "view-accounts";
+            include("assets/partials/adminsidebar.php");
+        ?>
+
+        <div class="main-panel">
+            <?php include("assets/partials/adminnavbar.php"); ?>
 
         <div class="content">
             <div class="row">

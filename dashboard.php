@@ -24,7 +24,10 @@
 <body class="">
   <div class="wrapper">
    
-  <?php require "assets/partials/adminsidebar.php"; ?>
+  <?php
+    $activePage = "dashboard";
+    require "assets/partials/adminsidebar.php";
+  ?>
 
   <div class="main-panel">
 
