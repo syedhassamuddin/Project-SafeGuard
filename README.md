@@ -25,6 +25,15 @@ CREATE TABLE patients(
     vaccine_completed VARCHAR(225)
 );
 
+CREATE TABLE hospitals(
+    hospital_id INT PRIMARY KEY AUTO_INCREMENT,
+    hostpital_name 
+);
+
+CREATE TABLE admins(
+
+);
+
 3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
 
 ## account_type
