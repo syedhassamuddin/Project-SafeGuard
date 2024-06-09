@@ -46,7 +46,7 @@
           <h5 class="title">Create An Account</h5>
         </div>
         <div class="card-body">
-          <form action="createaccount.php" method="post">
+          <form action="create-account.php" method="post">
 
           <?php
             if(empty($_POST['account-selection'])){
@@ -75,8 +75,11 @@
                 elseif($_POST['account-type'] == 'hospital'){
                   include "assets/partials/create-hospital-account.php";
                 }
-                else{
+                elseif($_POST['account-type'] == 'admin'){
                   include "assets/partials/create-admin-account.php";
+                }
+                else{
+                  echo "There was a problem. Please contact Site Administrator";
                 }
               }
 
