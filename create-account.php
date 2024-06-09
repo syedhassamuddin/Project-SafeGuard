@@ -66,19 +66,17 @@
               </div>";
             }
           ?>  
-          
-
 
             <?php
             if(isset($_POST['account-selection'])){
                 if($_POST['account-type'] == 'patient'){
-                  include "create-patient-account.php";
+                  include "assets/partials/create-patient-account.php";
                 }
                 elseif($_POST['account-type'] == 'hospital'){
-                  include "create-hospital-account.php";
+                  include "assets/partials/create-hospital-account.php";
                 }
                 else{
-                  include "create-admin-account.php";
+                  include "assets/partials/create-admin-account.php";
                 }
               }
 
