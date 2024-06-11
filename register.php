@@ -1,23 +1,22 @@
 <?php
-require "assets/php-scripts/conn.php";
-if (isset ($_POST['register']))
-{
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$account_type = $_POST['account_type'];
-$rows= "INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`, `account_type`) 
-VALUES ('[$first_name]','[$last_name]','[$email]','[$password]','[$account_type]')";
+  require "assets/php-scripts/conn.php";
+  if (isset ($_POST['register'])){
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $account_type = $_POST['account_type'];
+    $rows= "INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`, `account_type`) 
+    VALUES ('$first_name','$last_name','$email','$password','$account_type')";
 
-$result = mysqli_query($conn,$rows);
-if("result"){
-  echo "<script>alert('Registration Successful! please login')</script>";
-}
-else{
-  echo "<script>alert('Registration failed')</script>";
-}
-}
+    $result = mysqli_query($conn,$rows);
+    if($result){
+      echo "<script>alert('Registration Successful! please login');</script>";
+    }
+    else{
+      echo "<script>alert('Registration failed');</script>";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +51,7 @@ else{
                 <h5 class="title">Sign Up</h5>
               </div>
               <div class="card-body">
-                <form method ="post">
+                <form action="register.php" method ="post">
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">

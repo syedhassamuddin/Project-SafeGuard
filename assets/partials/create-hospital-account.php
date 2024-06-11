@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
         <div class="form-group">
-            <label>Hospital</label>
+            <label>Hospital Name</label>
             <input type="text" class="form-control" name="name" placeholder="Civil Hospital" >
         </div>
         </div>
@@ -27,3 +27,7 @@
         <button type="submit" name="submit" class="btn btn-fill btn-primary">Create Account</button>
     </div>
 </form>
+
+<?php 
+    
+?>
