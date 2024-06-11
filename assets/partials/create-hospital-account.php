@@ -1,4 +1,4 @@
-<form action="assets/partials/create-hospital-account.php" method="post">
+<form action="assets/php-scripts/account-creation-script.php" method="post">
     <div class="row">
         <div class="col-12">
         <div class="form-group">
@@ -24,29 +24,6 @@
     </div>
 
     <div class="card-footer">
-        <button type="submit" name="hospital-create" class="btn btn-fill btn-primary">Create Account</button>
+        <input type="submit" name="hospital-create" class="btn btn-fill btn-primary" value="Create Account">
     </div>
 </form>
-
-<?php
-// require "assets/php-scripts/conn.php";
-if(isset($_POST["hospital-create"])){
-    echo "button pressed";
-//     $name = $_POST['name'];
-//     $email = $_POST['email'];
-//     $pass  = $_POST['password'];
-
-
-// $sql ="INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')";
-// $result= mysqli_query($conn,$sql);
-
-// if($result){
-//     echo "<script>alert('Account Created Successfully')</script>";
-//     }
-//     else{
-//     echo "<script>alert('Account Creation Failed')</script>";
-//     }
-}
-
-
-?>

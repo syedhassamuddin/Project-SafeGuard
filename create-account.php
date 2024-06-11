@@ -48,24 +48,25 @@
         <div class="card-body">
           <form action="create-account.php" method="post">
 
-          <?php
-            if(empty($_POST['account-selection'])){
-              echo "<div class='row'>
-              <div class='col-md-6'>
-                  <label>To begin, please select the 'Account Type' you'd like to create</label>
-                  <select class='form-control mb-3' name='account-type' aria-label='.form-select-lg example' style='background-color: #27293d;'>
-                    <option selected disabled>View Options</option>
-                    <option value='patient'>Patient</option>
-                    <option value='hospital'>Hospital</option>
-                    <option value='admin'>Admin</option>
-                  </select>
-              </div>
-              </div>
-              <div class='col-md-6'>
-                <input class='btn btn-primary' type='submit' name='account-selection' value='Begin'>
-              </div>";
-            }
-          ?>  
+            <?php
+              if(empty($_POST['account-selection'])){
+                echo "<div class='row'>
+                <div class='col-md-6'>
+                    <label>To begin, please select the 'Account Type' you'd like to create</label>
+                    <select class='form-control mb-3' name='account-type' aria-label='.form-select-lg example' style='background-color: #27293d;'>
+                      <option selected disabled>View Options</option>
+                      <option value='patient'>Patient</option>
+                      <option value='hospital'>Hospital</option>
+                      <option value='admin'>Admin</option>
+                    </select>
+                </div>
+                </div>
+                <div class='col-md-6'>
+                  <input class='btn btn-primary' type='submit' name='account-selection' value='Begin'>
+                </div>";
+              }
+            ?>
+          </form>
 
             <?php
             if(isset($_POST['account-selection'])){
@@ -84,7 +85,6 @@
               }
 
             ?>
-          </form>
         </div>
       </div>
     </div>
