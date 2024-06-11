@@ -29,37 +29,23 @@
 </form>
 
 <?php
-if($_SERVER['REQUEST_METHOD'] =='POST'){
+require "assets/php-scripts/conn.php";
+if(isset($_POST["submit"])){
     $name = $_POST['name'];
-    $email = $_POST ['email'];
-    $pass = $_POST['password'];
-
-$servername = "localhost";
-$username = "root";
-$passowrd = ""; 
-$database = "safeguarddb";
-
-$conn = mysqli_connect($servername,$username,$passowrd,$database);
-
-if(!$conn){
-    die("Sorry we failed to connect".mysqli_connect_error());
-}
-
+    $email = $_POST['email'];
+    $pass  = $_POST['password'];
 
 
 $sql ="INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')";
 $result= mysqli_query($conn,$sql);
 
-
-if(!$result){
-    echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
-  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-  <div>
-     Error 
-  </div>
-</div>';
+if($result){
+    echo "<script>alert('Account Created Successfully')</script>";
+    }
+    else{
+    echo "<script>alert('Account Creation Failed')</script>";
+    }
 }
 
 
-}
 ?>
