@@ -3,7 +3,7 @@
         <div class="col-12">
         <div class="form-group">
             <label>Hospital Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Civil Hospital" >
+            <input type="text" class="form-control" name="name" placeholder="Civil Hospital" require >
         </div>
         </div>
     </div>
@@ -12,13 +12,13 @@
         <div class="col-md-6 pr-md-1">
         <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control" name="email" placeholder="example@example.com" >
+            <input type="text" class="form-control" name="email" placeholder="example@example.com" require >
         </div>
         </div>
         <div class="col-md-6 pl-md-1">
         <div class="form-group">
             <label>Password</label>
-            <input type="text" class="form-control" name="password" placeholder="Enter Password" >
+            <input type="text" class="form-control"  name="password" placeholder="Enter Password" require >
         </div>
         </div>
     </div>
