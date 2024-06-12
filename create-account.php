@@ -48,24 +48,25 @@
         <div class="card-body">
           <form action="create-account.php" method="post">
 
-          <?php
-            if(empty($_POST['account-selection'])){
-              echo "<div class='row'>
-              <div class='col-md-6'>
-                  <label>To begin, please select the 'Account Type' you'd like to create</label>
-                  <select class='form-control mb-3' name='account-type' aria-label='.form-select-lg example' style='background-color: #27293d;'>
-                    <option selected disabled>View Options</option>
-                    <option value='patient'>Patient</option>
-                    <option value='hospital'>Hospital</option>
-                    <option value='admin'>Admin</option>
-                  </select>
-              </div>
-              </div>
-              <div class='col-md-6'>
-                <input class='btn btn-primary' type='submit' name='account-selection' value='Begin'>
-              </div>";
-            }
-          ?>  
+            <?php
+              if(empty($_POST['account-selection'])){
+                echo "<div class='row'>
+                <div class='col-md-6'>
+                    <label>To begin, please select the 'Account Type' you'd like to create</label>
+                    <select class='form-control mb-3' name='account-type' aria-label='.form-select-lg example' style='background-color: #27293d;'>
+                      <option selected disabled>View Options</option>
+                      <option value='patient'>Patient</option>
+                      <option value='hospital'>Hospital</option>
+                      <option value='admin'>Admin</option>
+                    </select>
+                </div>
+                </div>
+                <div class='col-md-6'>
+                  <input class='btn btn-primary' type='submit' name='account-selection' value='Begin'>
+                </div>";
+              }
+            ?>
+          </form>
 
             <?php
             if(isset($_POST['account-selection'])){
@@ -84,7 +85,6 @@
               }
 
             ?>
-          </form>
         </div>
       </div>
     </div>
@@ -334,61 +334,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- commented section  -->
-<!-- 
-
-<!--! buttons --->
-<!-- <div class="col-md-3 px-md-1">
-                   
-                    <div class="col-md-4 pl-md-1">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
-                      </div>
-                    </div> 
-                
-                
-                <div class="col-md-5 pr-md-1">
-                      <div class="form-group">
-                        <label>Company (disabled)</label>
-                        <input type="text" class="form-control"  placeholder="Company" value="Creative Code Inc.">
-                      </div>
-                    </div>
-                    <div class="col-md-5 pr-md-1">
-                      <div class="form-group">
-                        <label>Company (disabled)</label>
-                        <input type="text" class="form-control"  placeholder="Company" value="Creative Code Inc.">
-                      </div>
-                    </div>
-                
-                <div class="col-md-4 pl-md-1">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
-                      </div>
-                    </div> 
-                
-                  <div class="form-group">
-                        <label>Account Type </label>
-                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-                      </div>
-                -->
- -->
