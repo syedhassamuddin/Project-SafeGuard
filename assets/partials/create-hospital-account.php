@@ -36,10 +36,9 @@ if(isset($_POST["submit"])){
     $pass  = $_POST['password'];
 
 
-$sql ="INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')";
-$result= mysqli_query($conn,$sql);
+    $query=mysqli_query("INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')");
 
-if($result){
+if($query){
     echo "<script>alert('Account Created Successfully')</script>";
     }
     else{
