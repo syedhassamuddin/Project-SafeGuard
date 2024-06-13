@@ -27,6 +27,13 @@ CREATE TABLE admins(
     admin_passowrd VARCHAR(225)
 );
 
+CREATE table vaccine_stock(
+    vaccine_id INT PRIMARY KEY AUTO_INCREMENT,
+    vaccine_name VARCHAR(225),
+    purchase_date DATE,
+	purchased_stock INT(9)
+);
+
 3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
 
 ## account_type
