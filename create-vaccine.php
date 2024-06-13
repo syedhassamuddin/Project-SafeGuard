@@ -47,34 +47,31 @@
         </div>
         <div class="card-body">
 
-
-
-
           <form action="create-vaccine.php" method="post">
 
-          <div class="row">
-        <div class="col-12">
-        <div class="form-group">
-            <label>Vaccine Name</label>
-            <input type="text" class="form-control" name="Vname" placeholder="vaccine Name" require >
-        </div>
-        </div>
-    </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label>Vaccine Name</label>
+                  <input type="text" class="form-control" name="vaccine-name" placeholder="vaccine Name" require >
+                </div>
+              </div>
+            </div>
 
-    <div class="row">
-        <div class="col-md-6 pr-md-1">
-        <div class="form-group">
-            <label>Vaccine purchase date</label>
-            <input type="datetime-local" class="form-control" name="Vdatetime" placeholder="Vaccine purchase date" require >
-        </div>
-        </div>
-        <div class="col-md-6 pl-md-1">
-        <div class="form-group">
-            <label>Vaccine stock</label>
-            <input type="number" class="form-control"  name="Vstock" placeholder="Vaccine stock" require >
-        </div>
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-md-6 pr-md-1">
+                  <div class="form-group">
+                      <label>Vaccine purchase date</label>
+                      <input type="date" class="form-control" name="vaccine-date" placeholder="Vaccine purchase date" require >
+                  </div>
+                </div>
+                <div class="col-md-6 pl-md-1">
+                  <div class="form-group">
+                      <label>Vaccine stock</label>
+                      <input type="number" class="form-control"  name="vaccine-stock" placeholder="Vaccine stock" require >
+                  </div>
+                </div>
+            </div>
 
     <div class="card-footer">
         <input type="submit" name="vaccine-create" class="btn btn-fill btn-primary" value="Create Vaccine">
@@ -332,32 +329,30 @@
 
 <?php 
  if(isset($_POST["vaccine-create"])){
-  $Vname = $_POST['Vname'];
-  $Vdate = $_POST['Vdatetime'];
-  $Vstock = $_POST['Vstock'];
+    $Vname = $_POST['vaccine-name'];
+    $Vdate = $_POST['vaccine-date'];
+    $Vstock = $_POST['vaccine-stock'];
 
 
-  $sql= "INSERT INTO `vaccine_stock`(`vaccine_name`, `purchase_date`, `pruchased_stock`) VALUES ('$Vname','$Vdate','$Vstock')";
-  $result = mysqli_query($conn,$sql);
+    $sql= "INSERT INTO vaccine_stock VALUES (NULL, '$Vname','$Vdate','$Vstock')";
+    $result = mysqli_query($conn,$sql);
 
-  if($result){
-    echo "
+      if($result){
+        echo "
+                <script>
+                    alert('Vaccine Added Successfully');
+                    window.location.href = 'create-vaccine.php';
+                </script>
+            ";
+        }
+        else{
+        echo "
             <script>
-                alert('Account Created Successfully');
-                window.location.href = '../../create-account.php';
+                alert('Vaccine Addition Failed');
+                window.location.href = 'create-vaccine.php';
             </script>
-        ";
-    }
-    else{
-    echo "
-        <script>
-            alert('Account Creation Failed');
-            window.location.href = '../../create-account.php';
-        </script>
-        ";
-    }
-
-
+            ";
+        }
  }
 
 
