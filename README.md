@@ -27,17 +27,28 @@ CREATE TABLE admins(
     admin_passowrd VARCHAR(225)
 );
 
-CREATE table vaccine_stock(
+CREATE TABLE vaccine_stock (
     vaccine_id INT PRIMARY KEY AUTO_INCREMENT,
     vaccine_name VARCHAR(225),
     purchase_date DATE,
-	purchased_stock INT(9)
+    purchased_stock INT(9),
+    hospital_id INT,
+    FOREIGN KEY (hospital_id) REFERENCES hospitals(hospital_id)
+);
+
+CREATE TABLE vaccine_appointments(
+	appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+    appointment_date DATE,
+    from_hospital INT,
+	to_patient INT,
+	FOREIGN KEY (from_hospital) REFERENCES hospitals(hospital_id),
+    FOREIGN KEY (to_patient) REFERENCES patients(patient_id)
 );
 
 3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
 
-## account_type
+![Alt text](ERDiagram.png)
 
-1. Patient
-2. Hospital
-3. Admin
+## Notes for Hassam
+1. Add hospital forign key to vaccine_stock
+
