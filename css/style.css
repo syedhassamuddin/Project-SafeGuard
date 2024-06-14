@@ -255,7 +255,7 @@ button {
 
 .menu_main li a {
     color: #385a64;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .menu_main li a:hover {

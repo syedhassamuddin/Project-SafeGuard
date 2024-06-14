@@ -6,24 +6,24 @@
         $pass  = $_POST['password'];
 
 
-    $sql ="INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')";
-    $result= mysqli_query($conn,$sql);
+        $sql ="INSERT INTO `hospitals`(`hostpital_name`, `hospital_email`, `hospital_password`) VALUES ('$name','$email','$pass')";
+        $result= mysqli_query($conn,$sql);
 
-    if($result){
-        echo "
+        if($result){
+            echo "
+                    <script>
+                        alert('Account Created Successfully');
+                        window.location.href = '../../create-account.php';
+                    </script>
+                ";
+            }
+            else{
+            echo "
                 <script>
-                    alert('Account Created Successfully');
+                    alert('Account Creation Failed');
                     window.location.href = '../../create-account.php';
                 </script>
-            ";
+                ";
+            }
         }
-        else{
-        echo "
-            <script>
-                alert('Account Creation Failed');
-                window.location.href = '../../create-account.php';
-            </script>
-            ";
-        }
-    }
 ?>

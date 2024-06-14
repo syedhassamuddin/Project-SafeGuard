@@ -1,3 +1,7 @@
+<?php
+   session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -34,7 +38,7 @@
       <!--header section start -->
 
 <?php
-   require "assets/partials/main-page-sidebar.php";
+   require "assets/partials/main-page-navbar.php";
 ?>
       
       <!-- header section end -->

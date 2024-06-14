@@ -7,11 +7,9 @@
                         <div class="togle_">
                            <div class="menu_main">
                               <ul>
-                                 <li><a href="dashboard.php"><div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-outline-success">Login</button>
-                                    <button type="button" class="btn btn-outline-primary">Hospital login</button>
-                                    <button type="button" class="btn btn-outline-danger">Admin login</button>
-                                  </div></a></li>
+                                 <li>
+                                    <a class="btn btn-outline-success text-black-50" href="login.php">Login</a>
+                                 </li>
                                  <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                               </ul>
                            </div>
