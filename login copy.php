@@ -2,24 +2,56 @@
   session_start();
   require "assets/php-scripts/conn.php";
   
-  if (isset ($_POST['login-submit'])){
+  if(isset($_POST['login-submit'])){
     $email = $_POST ['email'];
     $password= $_POST['password'];
-    $account_type= $_POST ['account_type'];
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-    $sql = mysqli_num_rows($result);
-    if($sql!=0){
-      header("location:dashboard.php");
-    }
-    else{
-      echo
-      "<script>
-              window.location.href = 'login.php'; 
-            alert ('Incorrect Credentials')
-            </script>";
-    }
-  }
 
+    $adminCheck = mysqli_query($conn, "SELECT * FROM admins WHERE admin_email = '$email' AND admin_password = '$password'");
+    $hospitalCheck = mysqli_query($conn, "SELECT * FROM hospital WHERE hospital_email = '$email' AND hospital_password = '$password'");
+    $patientCheck = mysqli_query($conn, "SELECT * FROM patient WHERE patient_email = '$email' AND patient_password = '$password'");
+
+    if(@$adminCheck){
+      if(mysqli_num_rows($adminCheck) == 1){
+        $_SESSION['email'] = $POST['email'];
+        $_SESSION['password'] = $POST['password'];
+        $_SESSION['account_type'] = "admin";
+        
+        echo 
+            "
+              <script>window.location.href = 'dashbord.php';</script>    
+            ";
+      }
+    }
+    elseif(@$hospitalCheck){
+      if(mysqli_num_rows($hospitalCheck) > 0){
+        $_SESSION['email'] = $POST['email'];
+        $_SESSION['password'] = $POST['password'];
+        $_SESSION['account_type'] = "hospital";
+        
+        echo 
+            "
+              <script>window.location.href = 'dashbord.php';</script>    
+            ";
+      }
+    }
+    elseif(@$paitentCheck){
+      if(mysqli_num_rows($patientCheck) == 1){
+        $_SESSION['email'] = $POST['email'];
+        $_SESSION['password'] = $POST['password'];
+        $_SESSION['account_type'] = "patient";
+        
+        echo 
+            "
+              <script>window.location.href = 'dashbord.php';</script>    
+            ";
+      }
+      else{
+        echo  "
+                <script>alert('incorrect credentials');</script>
+              ";
+      }
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,22 +107,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="col-12 col-md-6">
-								<div class="card">
-									<div class="card-header">
-										<h5 class="card-title mb-0">Account Type</h5>
-									</div>
-									<div class="card-body">
-										<select name="account_type" class="form-select mb-3">
-											<option selected disabled>Select Account Type</option>
-											<option value="admin">Patient</option>
-											<option value="agent">Hospital</option>
-											<option value="customer">Admin</option>
-										</select>
-									</div>
-								</div>
-							</div>
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-fill btn-primary" name="login-submit">Login</button>
