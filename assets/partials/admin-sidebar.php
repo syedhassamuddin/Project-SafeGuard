@@ -25,6 +25,15 @@
               <p>Create Account</p>
             </a>
           </li>
+
+          <li class="<?php if($activePage == 'create-vaccine'){echo 'active';}?>">
+            <a href="create-vaccine.php">
+              <i class="tim-icons icon-badge"></i>
+              <p>Create vaccine</p>
+            </a>
+          </li>
+
+
           <li class="<?php if($activePage == 'view-accounts '){echo 'active';}?>">
             <a href="view-accounts.php">
               <i class="tim-icons icon-badge"></i>
