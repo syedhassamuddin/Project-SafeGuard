@@ -34,12 +34,20 @@
           </li>
 
 
-          <li class="<?php if($activePage == 'view-accounts '){echo 'active';}?>">
+          <li class="<?php if($activePage == 'view-accounts'){echo 'active';}?>">
             <a href="view-accounts.php">
               <i class="tim-icons icon-badge"></i>
               <p>View All Accounts</p>
             </a>
           </li>
+
+          <li class="<?php if($activePage == 'profile'){echo 'active';}?>">
+            <a href="profile.php">
+              <i class="tim-icons icon-badge"></i>
+              <p>Profile</p>
+            </a>
+          </li>
+
           <li>
             <a href="icons.php">
               <i class="tim-icons icon-atom"></i>
