@@ -57,81 +57,140 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Edit Profile</h5>
+                <h5 class="title">ADMIN Profile</h5>
               </div>
               <div class="card-body">
                 <form>
                   <div class="row">
                     <div class="col-md-5 pr-md-1">
                       <div class="form-group">
-                        <label>Company (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                        <label>Admin First Name</label>
+                        <input type="text" class="form-control" name="Admin first name"  placeholder="Admin First Name" require>
                       </div>
                     </div>
                     <div class="col-md-3 px-md-1">
                       <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                        <label>Admin last name</label>
+                        <input type="text" class="form-control" name="Admin last name" placeholder="Admin Last Name" require >
                       </div>
                     </div>
                     <div class="col-md-4 pl-md-1">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
+                        <label for="exampleInputEmail1">Admin Email address</label>
+                        <input type="email" name="admin email" placeholder="Admin email" class="form-control" require>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Mike">
-                      </div>
-                    </div>
-                    <div class="col-md-6 pl-md-1">
-                      <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                        <label> Admin password</label>
+                        <input type="password" class="form-control" name="admin password" placeholder="Admin Password" require>
                       </div>
                     </div>
                   </div>
+                </form> 
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+              </div>
+            </div>
+          </div>    
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Hospital Profile</h5>
+              </div>
+              <div class="card-body">
+                <form>
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-5 pr-md-1">
                       <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                        <label>Hospital Name</label>
+                        <input type="text" class="form-control" name="Hospital name"  placeholder="Hospital Name" require>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 pr-md-1">
+                    <div class="col-md-3 px-md-1">
                       <div class="form-group">
-                        <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Mike">
-                      </div>
-                    </div>
-                    <div class="col-md-4 px-md-1">
-                      <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                        <label>Hospital Email</label>
+                        <input type="email" class="form-control" name="Hospital email" placeholder="Hospital Email" require >
                       </div>
                     </div>
                     <div class="col-md-4 pl-md-1">
                       <div class="form-group">
-                        <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
+                        <label for="exampleInputEmail1">Hospital Password</label>
+                        <input type="password" name="Hospital password" placeholder="Hospital Password" class="form-control" require>
+                      </div>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+              </div>
+            </div>
+          </div>          
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Patient Profile</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-5 pr-md-1">
+                      <div class="form-group">
+                        <label>Patient First Name</label>
+                        <input type="text" class="form-control" name="Patient first name"  placeholder="Patient First Name" require>
+                      </div>
+                    </div>
+                    <div class="col-md-3 px-md-1">
+                      <div class="form-group">
+                        <label>Patient last name</label>
+                        <input type="text" class="form-control" name="Patient last name" placeholder="Patient Last Name" require >
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-md-1">
+                      <div class="form-group">
+                        <label >Patient Age</label>
+                        <input type="number" name="Patient email" placeholder="Patient age" class="form-control" require>
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-md-1">
+                    <div class="form-check">
+                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                     <label class="form-check-label" for="exampleRadios1">
+                     Male
+                     </label>
+                     </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                     <label class="form-check-label" for="exampleRadios2">
+                     Female
+                    </label>
+                   </div>
+
+                    </div>
+                    <div class="col-md-4 pl-md-1">
+                      <div class="form-group">
+                        <label >Patient Email address</label>
+                        <input type="email" name="Patient email" placeholder="Patient email" class="form-control" require>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>About Me</label>
-                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                        <label> Patient password</label>
+                        <input type="password" class="form-control" name="Patient password" placeholder="Patient Password" require>
                       </div>
                     </div>
                   </div>
-                </form>
+                </form> 
               </div>
               <div class="card-footer">
                 <button type="submit" class="btn btn-fill btn-primary">Save</button>
