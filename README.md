@@ -45,7 +45,7 @@ CREATE TABLE vaccine_appointments(
     FOREIGN KEY (to_patient) REFERENCES patients(patient_id)
 );
 
-3. INSERT INTO users VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam", "admin");
+3. INSERT INTO admins VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam"), (NULL, "Farhan", "Jamil", "farhan@gmail.com", "farhan");
 
 ![Alt text](ERDiagram.png)
 

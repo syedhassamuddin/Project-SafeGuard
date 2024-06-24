@@ -76,22 +76,6 @@
                   </div>
                 </div>
 
-                <div class="col-12 col-md-6">
-								<div class="card">
-									<div class="card-header">
-										<h5 class="card-title mb-0">Account Type</h5>
-									</div>
-									<div class="card-body">
-										<select name="account_type" class="form-select mb-3">
-											<option selected disabled>Select Account Type</option>
-											<option value="admin">Patient</option>
-											<option value="agent">Hospital</option>
-											<option value="customer">Admin</option>
-										</select>
-									</div>
-								</div>
-							</div>
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-fill btn-primary" name="login-submit">Login</button>
                 </div>
