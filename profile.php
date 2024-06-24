@@ -152,40 +152,67 @@
               </div>
               <div class="card-body">
                 <form>
+
                   <div class="row">
-                    <div class="col-md-5 pr-md-1">
+                    <div class="col-md-4 pl-md-3">
                       <div class="form-group">
                         <label>Patient First Name</label>
                         <input type="text" class="form-control" name="Patient first name"  placeholder="Patient First Name" require>
                       </div>
                     </div>
-                    <div class="col-md-3 px-md-1">
+                    <div class="col-md-4 px-md-1">
                       <div class="form-group">
                         <label>Patient last name</label>
                         <input type="text" class="form-control" name="Admin last name" placeholder="Patient Last Name" require >
                       </div>
                     </div>
-                    <div class="col-md-3 px-md-1">
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-4 pl-md-3">
                       <div class="form-group">
                         <label>Patient age</label>
                         <input type="number" class="form-control" name="patient age" placeholder="Patient age" require >
                       </div>
                     </div>
-                    <div class="col-md-4 pl-md-1">
+
+                    <div class="col-md-4 pl-md-3">
+                      <label for="">Select Gender</label>
+                      <div class="pl-md-3 form-group">
+                        <input class="form-check-input" type="radio" name="gender-radio" value="male">
+                        <label class="form-check-label" for="gender-radio">
+                          Male
+                        </label>
+                      </div>
+                      <div class="pl-md-3 form-group">
+                        <input class="form-check-input" type="radio" name="gender-radio" value="female">
+                        <label class="form-check-label" for="gender-radio">
+                          Female
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    
+                    <div class="col-md-6 pl-md-3">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Patient Email address</label>
                         <input type="email" name="Patient email" placeholder="Patient email" class="form-control" require>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 pr-md-1">
+
+                    <div class="col-md-6 px-md-1">
                       <div class="form-group">
                         <label> Admin password</label>
                         <input type="password" class="form-control" name="admin password" placeholder="Admin Password" require>
                       </div>
                     </div>
+
                   </div>
+                  
                 </form> 
               </div>
               <div class="card-footer">
