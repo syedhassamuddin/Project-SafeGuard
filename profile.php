@@ -50,9 +50,10 @@
 
 
  <!-- End Navbar -->
-
  
-      <div class="content">
+ <div class="content">
+   
+   <!-- Admin Profile Start -->
         <div class="row">
           <div class="col-md-8">
             <div class="card">
@@ -95,8 +96,59 @@
                 <button type="submit" class="btn btn-fill btn-primary">Save</button>
               </div>
             </div>
-          </div>    
-      <div class="content">
+          </div>
+
+      <!-- Admin Profile End -->
+
+      <!-- Admin Profile Start -->
+      <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">ADMIN Profile</h5>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-5 pr-md-1">
+                      <div class="form-group">
+                        <label>Admin First Name</label>
+                        <input type="text" class="form-control" name="Admin first name"  placeholder="Admin First Name" require>
+                      </div>
+                    </div>
+                    <div class="col-md-3 px-md-1">
+                      <div class="form-group">
+                        <label>Admin last name</label>
+                        <input type="text" class="form-control" name="Admin last name" placeholder="Admin Last Name" require >
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-md-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Admin Email address</label>
+                        <input type="email" name="admin email" placeholder="Admin email" class="form-control" require>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                      <div class="form-group">
+                        <label> Admin password</label>
+                        <input type="password" class="form-control" name="admin password" placeholder="Admin Password" require>
+                      </div>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+
+      <!-- Admin Profile End -->
+
+
+      <!-- Hospital Profile Start -->
         <div class="row">
           <div class="col-md-8">
             <div class="card">
@@ -131,8 +183,9 @@
                 <button type="submit" class="btn btn-fill btn-primary">Save</button>
               </div>
             </div>
-          </div>          
-      <div class="content">
+      <!-- Hospital Profile End -->
+
+      <!-- Patient Profile Start -->
         <div class="row">
           <div class="col-md-8">
             <div class="card">
@@ -140,6 +193,7 @@
                 <h5 class="title">Patient Profile</h5>
               </div>
               <div class="card-body">
+
                 <form>
                   <div class="row">
                     <div class="col-md-5 pr-md-1">
@@ -160,28 +214,32 @@
                         <input type="number" name="Patient email" placeholder="Patient age" class="form-control" require>
                       </div>
                     </div>
-                    <div class="col-md-4 pl-md-1">
-                    <div class="form-check">
-                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                     <label class="form-check-label" for="exampleRadios1">
-                     Male
-                     </label>
-                     </div>
-                   <div class="form-check">
-                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                     <label class="form-check-label" for="exampleRadios2">
-                     Female
-                    </label>
-                   </div>
+                  </div>
+                  <div class="row">
 
+                    <div class="col-md-6 pl-md-1">
+                      <div class="form-check">
+                        <input class="form-check-control" type="radio" name="gender-radio" value="male" checked>
+                        <label class="form-check-label" for="gender-radio">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="" type="radio" name="gender-radio" value="female">
+                        <label class="form-check-label" for="gender-radio">
+                          Female
+                        </label>
+                      </div>
                     </div>
-                    <div class="col-md-4 pl-md-1">
+
+                    <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label >Patient Email address</label>
                         <input type="email" name="Patient email" placeholder="Patient email" class="form-control" require>
                       </div>
                     </div>
                   </div>
+
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
@@ -191,12 +249,19 @@
                     </div>
                   </div>
                 </form> 
+
               </div>
               <div class="card-footer">
                 <button type="submit" class="btn btn-fill btn-primary">Save</button>
               </div>
             </div>
           </div>
+          </div>
+        </div>
+
+          <!-- Patient Profile End -->
+
+
           <div class="col-md-4">
             <div class="card card-user">
               <div class="card-body">
@@ -235,7 +300,7 @@
             </div>
           </div>
         </div>
-      </div>
+
       <footer class="footer">
         <div class="container-fluid">
           <ul class="nav">
@@ -266,6 +331,7 @@
       </footer>
     </div>
   </div>
+</div>
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
