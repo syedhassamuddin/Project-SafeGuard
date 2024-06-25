@@ -47,6 +47,10 @@ CREATE TABLE vaccine_appointments(
 
 3. INSERT INTO admins VALUES (NULL, "Syed", "Hassam", "hassam@gmail.com", "hassam"), (NULL, "Farhan", "Jamil", "farhan@gmail.com", "farhan");
 
+INSERT INTO hospitals VALUES (NULL, "City Hospital","cityhospital@gmail.com", "city");
+
+INSERT INTO patients VALUES (NULL, "hammad", "memon", "18", "male", "hammad@gmail.com", "hammad");
+
 ![Alt text](ERDiagram.png)
 
 ## Notes for Hassam
