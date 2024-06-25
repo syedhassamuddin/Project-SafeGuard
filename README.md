@@ -24,7 +24,7 @@ CREATE TABLE admins(
     admin_first_name VARCHAR(225),
     admin_last_name VARCHAR(225),
     admin_email VARCHAR(225),
-    admin_passowrd VARCHAR(225)
+    admin_password VARCHAR(225)
 );
 
 CREATE TABLE vaccine_stock (

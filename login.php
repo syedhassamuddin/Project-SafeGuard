@@ -5,20 +5,25 @@
   if (isset ($_POST['login-submit'])){
     $email = $_POST ['email'];
     $password= $_POST['password'];
-    $account_type= $_POST ['account_type'];
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-    $sql = mysqli_num_rows($result);
-    if($sql!=0){
-      header("location:dashboard.php");
+  
+    $admin_result = mysqli_query($conn, "SELECT * FROM admins WHERE admin_email = '$email' AND admin_password = '$password'");
+    $hospitals_result = mysqli_query($conn, "SELECT * FROM hospitals WHERE hospital_email = '$email' AND hospital_password = '$password'");
+    $patients_result = mysqli_query($conn, "SELECT * FROM patients WHERE patient_email = '$email' AND patient_password = '$password'");
+    if(@mysqli_num_rows($admin_result)>0){
+      echo "Admin login";
     }
-    else{
-      echo
-      "<script>
-              window.location.href = 'login.php'; 
-            alert ('Incorrect Credentials')
-            </script>";
+    elseif(@mysqli_num_rows($hospitals_result)>0){
+      echo "Hospital login";
     }
-  }
+    elseif(@mysqli_num_rows($patients_result)>0){
+      echo "Patient login";
+    }
+      // echo
+      // "<script>
+      //         window.location.href = 'login.php'; 
+      //       alert ('Incorrect Credentials')
+      //       </script>";
+    }
 
 ?>
 <!DOCTYPE html>
