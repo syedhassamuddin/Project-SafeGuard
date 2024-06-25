@@ -10,13 +10,19 @@
     $hospitals_result = mysqli_query($conn, "SELECT * FROM hospitals WHERE hospital_email = '$email' AND hospital_password = '$password'");
     $patients_result = mysqli_query($conn, "SELECT * FROM patients WHERE patient_email = '$email' AND patient_password = '$password'");
     if(@mysqli_num_rows($admin_result)>0){
-      echo "Admin login";
+      $_SESSION['account_type'] = "admin";
+      echo "<script>window.location.href = 'dashboard.php';</script>";
     }
     elseif(@mysqli_num_rows($hospitals_result)>0){
-      echo "Hospital login";
+      $_SESSION['account_type'] = "hospital";
+      echo "<script>window.location.href = 'dashboard.php';</script>";
     }
     elseif(@mysqli_num_rows($patients_result)>0){
-      echo "Patient login";
+      $_SESSION['account_type'] = "patient";
+      echo "<script>window.location.href = 'dashboard.php';</script>";
+    }
+    else{
+      echo "<script>alert('Incorrect Credentials');</script>";
     }
       // echo
       // "<script>
