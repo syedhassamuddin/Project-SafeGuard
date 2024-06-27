@@ -32,6 +32,12 @@
               <p>Create vaccine</p>
             </a>
           </li>
+          <li class="<?php if($activePage == 'book an appointment'){echo 'active';}?>">
+            <a href="book-appointment.php">
+              <i class="tim-icons icon-badge"></i>
+              <p>Book an appointment</p>
+            </a>
+          </li>
 
 
           <li class="<?php if($activePage == 'view-accounts'){echo 'active';}?>">

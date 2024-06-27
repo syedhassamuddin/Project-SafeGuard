@@ -30,7 +30,7 @@
   <div class="wrapper">
     
     <?php
-      $activePage = "create-vaccine";
+      $activePage = "book_appointment";
       include("assets/partials/admin-sidebar.php");
     ?>
 
@@ -43,7 +43,7 @@
         <div class="col-md-8">
           <div class="card">
             <div class="card-header">
-              <h5 class="title">Create vaccine</h5>
+              <h5 class="title">Book an appointment</h5>
             </div>
             <div class="card-body">
 
@@ -52,8 +52,8 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label>Vaccine Name</label>
-                      <input type="text" class="form-control" name="vaccine-name" placeholder="vaccine Name" require >
+                      <label>Purchase Date</label>
+                      <input type="date" class="form-control" name="purchase-date" placeholder="purchase Date" require >
                     </div>
                   </div>
                 </div>
@@ -61,20 +61,20 @@
                 <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                          <label>Vaccine purchase date</label>
-                          <input type="date" class="form-control" name="vaccine-date" placeholder="Vaccine purchase date" require >
+                          <label>Select vaccine</label>
+                          <input type="text" class="form-control" name="Select-vaccine" placeholder="select Vaccine" require >
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
-                          <label>Vaccine stock</label>
-                          <input type="number" class="form-control"  name="vaccine-stock" placeholder="Vaccine stock" require >
+                          <label>Choose an Hospital</label>
+                          <input type="text" class="form-control"  name="Choose-hospital" placeholder="Choose Hospital" require >
                       </div>
                     </div>
                 </div>
 
         <div class="card-footer">
-            <input type="submit" name="vaccine-create" class="btn btn-fill btn-primary" value="Create Vaccine">
+            <input type="submit" name="Submit" class="btn btn-fill btn-primary">
         </div>
               </form>
 
@@ -83,7 +83,6 @@
           </div>
         </div>
 
-        
 
         <!-- <div class="col-md-4">
           <div class="card card-user">
