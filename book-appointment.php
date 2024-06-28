@@ -52,8 +52,8 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label>Purchase Date</label>
-                      <input type="date" class="form-control" name="Purchase-date" placeholder="purchase Date" require >
+                      <label>Appointment Date</label>
+                      <input type="date" class="form-control" name="appointment-date" placeholder="purchase Date" require >
                     </div>
                   </div>
                 </div>
@@ -62,19 +62,19 @@
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                           <label>Select vaccine</label>
-                          <input type="text" class="form-control" name="Select-vaccine" placeholder="select Vaccine" require >
+                          <input type="text" class="form-control" name="selected-vaccine" placeholder="select Vaccine" require >
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                           <label>Choose an Hospital</label>
-                          <input type="text" class="form-control"  name="Choose-hospital" placeholder="Choose Hospital" require >
+                          <input type="text" class="form-control"  name="selected-hospital" placeholder="Choose Hospital" require >
                       </div>
                     </div>
                 </div>
 
         <div class="card-footer">
-            <input type="submit" name="Make-appointment" class="btn btn-fill btn-primary">
+            <input type="submit" name="make-appointment" class="btn btn-fill btn-primary">
         </div>
               </form>
 
@@ -329,14 +329,12 @@
 
 
 <?php 
- if(isset($_POST["Make-appointment"])){
-    $Purchase_date = $_POST['Purchase-Date'];
-    $Select_vaccine = $_POST['Select-vaccine'];
-    $Choose_hospital = $_POST['Choose-hospital'];
+ if(isset($_POST["make-appointment"])){
+    $date = $_POST['appointment-date'];
+    $vaccine = $_POST['selected-vaccine'];
+    $hospital = $_POST['selected-hospital'];
 
-
-    $sql= "INSERT INTO vaccine_appointments VALUES (NULL, '$Purchase_date','$Select_vaccine','$Choose_hospital')";
-    $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($conn, "INSERT INTO vaccine_appointments VALUES (NULL, '$date','$vaccine',NULL,NULL)");
 
       if($result){
         echo "

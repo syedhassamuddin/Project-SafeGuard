@@ -39,6 +39,7 @@ CREATE TABLE vaccine_stock (
 CREATE TABLE vaccine_appointments(
 	appointment_id INT PRIMARY KEY AUTO_INCREMENT,
     appointment_date DATE,
+    vaccine_name VARCHAR(225),
     from_hospital INT,
 	to_patient INT,
 	FOREIGN KEY (from_hospital) REFERENCES hospitals(hospital_id),
