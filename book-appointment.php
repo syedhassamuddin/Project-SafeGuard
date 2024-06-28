@@ -30,7 +30,7 @@
   <div class="wrapper">
     
     <?php
-      $activePage = "book_appointment";
+      $activePage = "book-appointment";
       include("assets/partials/admin-sidebar.php");
     ?>
 
@@ -47,13 +47,13 @@
             </div>
             <div class="card-body">
 
-              <form action="create-vaccine.php" method="post">
+              <form action="book-appointment.php" method="post">
 
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
                       <label>Purchase Date</label>
-                      <input type="date" class="form-control" name="purchase-date" placeholder="purchase Date" require >
+                      <input type="date" class="form-control" name="Purchase-date" placeholder="purchase Date" require >
                     </div>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
                 </div>
 
         <div class="card-footer">
-            <input type="submit" name="Submit" class="btn btn-fill btn-primary">
+            <input type="submit" name="Make-appointment" class="btn btn-fill btn-primary">
         </div>
               </form>
 
@@ -329,28 +329,28 @@
 
 
 <?php 
- if(isset($_POST["vaccine-create"])){
-    $Vname = $_POST['vaccine-name'];
-    $Vdate = $_POST['vaccine-date'];
-    $Vstock = $_POST['vaccine-stock'];
+ if(isset($_POST["Make-appointment"])){
+    $Purchase_date = $_POST['Purchase-Date'];
+    $Select_vaccine = $_POST['Select-vaccine'];
+    $Choose_hospital = $_POST['Choose-hospital'];
 
 
-    $sql= "INSERT INTO vaccine_stock VALUES (NULL, '$Vname','$Vdate','$Vstock')";
+    $sql= "INSERT INTO vaccine_appointments VALUES (NULL, '$Purchase_date','$Select_vaccine','$Choose_hospital')";
     $result = mysqli_query($conn,$sql);
 
       if($result){
         echo "
                 <script>
-                    alert('Vaccine Added Successfully');
-                    window.location.href = 'create-vaccine.php';
+                    alert('Appointment Created Successfully');
+                    window.location.href = 'book-appointment.php';
                 </script>
             ";
         }
         else{
         echo "
             <script>
-                alert('Vaccine Addition Failed');
-                window.location.href = 'create-vaccine.php';
+                alert('Appointment Failed to Create');
+                window.location.href = 'book-appointment.php';
             </script>
             ";
         }
