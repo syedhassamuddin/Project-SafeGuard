@@ -1,4 +1,4 @@
-<form action="account-creation-script.php" method="post">
+<form action="assets/php-scripts/account-creation-script.php" method="post">
     <div class="row">
         <div class="col-md-6 pr-md-1">
         <div class="form-group">
@@ -45,6 +45,6 @@
     </div>
 
     <div class="card-footer">
-        <button type="submit" name="submit" class="btn btn-fill btn-primary">Create Account</button>
+        <button type="submit" name="patient-create" class="btn btn-fill btn-primary">Create Account</button>
     </div>
 </form>
