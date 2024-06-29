@@ -56,32 +56,34 @@
                                 <table class=" dataTable display" id="myTable">
                                     <thead class="text-primary">
                                         <tr>
-                                           
+                                            <th>ID</th>
                                             <th>First Name</th>
                                             <th>Last Name</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
                                             <th>Email</th>
                                             <th>Password</th>
                                             <th>Account Type</th>
-                                            <th class="text-center">Phone</th>
                                         </tr>
                                     </thead>
 
                                     <?php
                                     $conn = mysqli_connect("localhost", "root", "", "safeguarddb");
 
-                                    $sql = "SELECT * FROM `users`";
+                                    $sql = "SELECT * FROM patients";
                                     $result = mysqli_query($conn, $sql);
                                     if ($result) {
                                         $idcounter=1;
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             echo "<tr>";
                                             echo "<td>".$idcounter++."</td>";
-                                            echo "<td>".$row['first_name']."</td>";
-                                            echo "<td>".$row['last_name']."</td>";
-                                            echo "<td>".$row['email']."</td>";
-                                            echo "<td>".$row['password']."</td>";
-                                            echo "<td>".$row['account_type']."</td>";
-                                            echo "<td class='text-center'>".$row['phone']."</td>";
+                                            echo "<td>".$row['patient_first_name']."</td>";
+                                            echo "<td>".$row['patient_last_name']."</td>";
+                                            echo "<td>".$row['patient_age']."</td>";
+                                            echo "<td>".$row['patient_gender']."</td>";
+                                            echo "<td>".$row['patient_email']."</td>";
+                                            echo "<td>".$row['patient_password']."</td>";
+                                            echo "<td>Patient</td>";
                                             echo "</tr>";
                 
                                         }
