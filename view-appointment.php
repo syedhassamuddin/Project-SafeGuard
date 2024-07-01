@@ -72,11 +72,11 @@ session_start();
                                         $result = mysqli_query($conn, $sql);
                                         if ($result) {
                                             while ($row = mysqli_fetch_assoc($result)) {
-                                                $appointment_date = $row['appointment date'];
-                                                $from_hospital = $row['from hospital'];
-                                                $to_patient = $row['to patient'];
+                                                $appointment_date = $row['appointment_date'];
+                                                $from_hospital = $row['from_hospital'];
+                                                $to_patient = $row['to_patient'];
                                                 echo ' <tr>
-                                            <th scope="row">' . $Apoointment_date . '</th>
+                                            <th scope="row">' . $appointment_date . '</th>
                                               <td>' . $From_hospital . '</td>
                                               <td>' . $to_patient . '</td>
                                             </tr>';
