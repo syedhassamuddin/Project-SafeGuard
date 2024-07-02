@@ -58,9 +58,9 @@ session_start();
                                     <table class=" dataTable display" id="myTable">
                                         <thead class="text-primary">
                                             <tr>
-                                                <th>Appointment date</th>
-                                                <th>From Hospital</th>
-                                                <th>To Patient</th>
+                                                <th>ID</th>
+                                                <th>Appoitment Date</th>
+                                                <th>Vaccine name</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,13 +72,13 @@ session_start();
                                         $result = mysqli_query($conn, $sql);
                                         if ($result) {
                                             while ($row = mysqli_fetch_assoc($result)) {
-                                                $appointment_date = $row['appointment_date'];
-                                                $from_hospital = $row['from_hospital'];
-                                                $to_patient = $row['to_patient'];
+                                                $id=$row['appointment_id'];
+                                                $date = $row['appointment_date'];
+                                                $vaccine = $row['vaccine_name'];
                                                 echo ' <tr>
-                                            <th scope="row">' . $appointment_date . '</th>
-                                              <td>' . $From_hospital . '</td>
-                                              <td>' . $to_patient . '</td>
+                                            <th scope="row">' . $id. '</th>
+                                              <td>' . $date . '</td>
+                                              <td>' . $vaccine. '</td>
                                             </tr>';
                                             }
                                         }

@@ -62,7 +62,7 @@
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                           <label>Select vaccine</label>
-                          <input type="text" class="form-control" name="selected-vaccine" placeholder="select Vaccine" require >
+                          <input type="text" class="form-control" name="vaccine-name" placeholder="select Vaccine" require >
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
@@ -331,7 +331,7 @@
 <?php 
  if(isset($_POST["make-appointment"])){
     $date = $_POST['appointment-date'];
-    $vaccine = $_POST['selected-vaccine'];
+    $vaccine = $_POST['vaccine-name'];
     $hospital = $_POST['selected-hospital'];
 
     $result = mysqli_query($conn, "INSERT INTO vaccine_appointments VALUES (NULL, '$date','$vaccine',NULL,NULL)");
