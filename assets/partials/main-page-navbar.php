@@ -6,9 +6,12 @@
                      <ul>
                         <div class="togle_">
                            <div class="menu_main">
-                              <ul>
+                              <ul class="d-flex">
                                  <li>
                                     <a class="btn btn-outline-success text-black-50" href="login.php">Login</a>
+                                 </li>
+                                 <li>
+                                    <a class="btn btn-outline-success text-black-50" href="dashboard.php">Dashboard</a>
                                  </li>
                                  <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                               </ul>
@@ -25,7 +28,6 @@
                            </div>
                         </div>
                         <span class="navbar-toggler-icon"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon.png" class="toggle_menu"></span>
                         <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu_1"></span>
                      </ul>
                   </div>
